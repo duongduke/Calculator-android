@@ -14,7 +14,7 @@ fun evaluateExpression(expression: String): String {
         if (result % 1 == 0.0) {
             result.toInt().toString()
         } else {
-            result.toString()
+            "%.9f".format(result).trimEnd('0').trimEnd('.') //tránh tràn số
         }
     } catch (e: Exception) {
         "Error!" // Trả về lỗi nếu có ngoại lệ xảy ra
